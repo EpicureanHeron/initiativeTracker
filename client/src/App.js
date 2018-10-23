@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //import {CollapsibleComponent, CollapsibleHead, CollapsibleContent} from 'react-collapsible-component';
 
-import About from "./pages/About";
+import character from "./pages/character";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 
@@ -18,7 +18,7 @@ const App = () => (
       <Navbar />
      
       <Wrapper>
-        <Route exact path="/about" component={About} />
+        <Route exact path="/character" component={character} />
         {/* <Route exact path="/profile" component={Profile} />
         <Route exact path="/about" component={About} />
        */}

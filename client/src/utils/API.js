@@ -16,8 +16,8 @@ export default {
     },
     // Creates Recipe based on the Recipe JSON passed to it
     // look at the models folder and Recipe.js for the format
-    saveRecipe: function (recipeJSON) {
-        return axios.post("/api/recipes/", recipeJSON);
+    saveCharacter: function (characterJSON) {
+        return axios.post("/api/character/", characterJSON);
     },
     // Updates recipe based on the MongoDB passed to it 
     updateRecipe: function (id, plusorminus) {
