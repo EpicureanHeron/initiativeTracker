@@ -5,88 +5,88 @@ module.exports = {
 
    //USER QUERIES
 
-  findAllUser: function(req, res) {
+  findAllCharacter: function(req, res) {
   
-    db.User
+    db.Character
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByIdUser: function(req, res) {
-    db.User
+  findByIdCharacter: function(req, res) {
+    db.Character
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  createUser: function(req, res) {
+  createCharacter: function(req, res) {
     console.log(req.body)
-    db.User
+    db.Character
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  updateUser: function(req, res) {
-    db.User
+  updateCharacter: function(req, res) {
+    db.Character
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  removeUser: function(req, res) {
-    db.User
+  removeCharacter: function(req, res) {
+    db.Character
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
 
-  //RECIPE QUERIES
-  findAllRecipe: function(req, res) {
+  //Battle QUERIES
+  findAllBattle: function(req, res) {
   
-    db.Recipe
+    db.Battle
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByIdRecipe: function(req, res) {
-    db.Recipe
+  findByIdBattle: function(req, res) {
+    db.Battle
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  createRecipe: function(req, res) {
+  createBattle: function(req, res) {
     console.log(req.body)
-    db.Recipe
+    db.Battle
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  updateRecipeLikeCount: function(req, res) {
-    db.Recipe.findById(req.params.id, function(err, recipe) {
+  updateBattleLikeCount: function(req, res) {
+    db.Battle.findById(req.params.id, function(err, Battle) {
       if (err) throw err;
       if (req.params.incrementOrDecrement === 'increment') {
-        recipe.count += 1;
+        Battle.count += 1;
       } else if (req.params.incrementOrDecrement === 'decrement') {
-        recipe.count -= 1;
+        Battle.count -= 1;
       }
-      recipe.save(err => {
+      Battle.save(err => {
         if (err) throw err;
-        console.log('recipe decremented!')
+        console.log('Battle decremented!')
       })
     })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },
-  removeRecipe: function(req, res) {
-    db.Recipe
+  removeBattle: function(req, res) {
+    db.Battle
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // sortTopRecipe: function(req, res){
-  //   db.Recipe
+  // sortTopBattle: function(req, res){
+  //   db.Battle
   //     .findByCount(req.params.count)
   //     .sort()
   // }

@@ -36,11 +36,11 @@ To deploy, simply add and commit your changes, and push to Heroku. As is, the NP
 Name
 Level 
 Dex Mod
-Other Mods?
-Alive or Dead?
+--Other Mods?
+--Alive or Dead?
 Player Picture 
-PC or NPC? 
-Current Status ?? (could be used in combat then )
+--PC or NPC? 
+--Current Status ?? (could be used in combat then )
 
 
 ## Battle Table

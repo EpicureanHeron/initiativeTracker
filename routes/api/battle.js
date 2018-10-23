@@ -3,13 +3,13 @@ const controller = require("../../controllers/controller");
 
 
 router.route("/")
-  .get(controller.findAllUser)
-  .post(controller.createUser)
+ .get(controller.findAllBattle)
+//.post(controller.createUser)
 
 router.route("/:id")
-  .get(controller.findByIdUser)
-  .delete(controller.removeUser)
-  .put(controller.updateUser)
+ // .get(controller.findByIdUser)
+  //.delete(controller.removeUser)
+  //.put(controller.updateUser)
 
 
 
