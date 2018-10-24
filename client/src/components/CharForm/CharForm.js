@@ -15,9 +15,9 @@ class CharForm extends Component {
 
   handleClick = event => {
     console.log(this.state.name)
-    console.log(this.state.dex)
-    console.log(this.state.playerImage)
-    console.log(this.state.player)
+   // console.log(this.state.dex)
+   // console.log(this.state.playerImage)
+   // console.log(this.state.player)
 
     event.preventDefault()
     let charInfo = {
@@ -45,6 +45,11 @@ class CharForm extends Component {
     });
   };
 
+componentDidMount() {
+  console.log("mounted!")
+  API.getAllCharacter()
+  .then(res => console.log(res.data))
+}
 
 
   render = props => {
@@ -53,10 +58,10 @@ class CharForm extends Component {
   <form>
     <div className="form-group">
      
-      <input name ="name" type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Character Name" />
-      <input name ="dex" type="dex" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Initiative Bonus" />
-      <input name ="playerImage" type="playerImage" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image URL" />
-      <input name = "player" type="player" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Player's name" />
+      <input name ="name" value={this.state.name} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Character Name" />
+      <input name ="dex" value={this.state.dex} onChange={this.handleInputChange} type="dex" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Initiative Bonus" />
+      <input name ="playerImage" value={this.state.playerImage} onChange={this.handleInputChange} type="playerImage" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image URL" />
+      <input name = "player"  value={this.state.player}  onChange={this.handleInputChange} type="player" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Player's name" />
 
     </div>
    

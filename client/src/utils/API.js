@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
 
     //Gets all recipes
-    getAllRecipes: function () {
-        return axios.get("/api/recipes/");
+    getAllCharacter: function () {
+        return axios.get("/api/character/");
     },
     // Gets Recipe based on MongoDB ID passed via the function
     getRecipe: function (id) {
