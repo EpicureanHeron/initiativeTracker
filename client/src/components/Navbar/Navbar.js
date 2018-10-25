@@ -8,7 +8,7 @@ import "./Navbar.css";
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand" to="/">
-      MeatUp
+      D&D Initiative Tracker
     </Link>
     <div>
       <ul className="navbar-nav">

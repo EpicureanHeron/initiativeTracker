@@ -45,11 +45,7 @@ class CharForm extends Component {
     });
   };
 
-componentDidMount() {
-  console.log("mounted!")
-  API.getAllCharacter()
-  .then(res => console.log(res.data))
-}
+
 
 
   render = props => {

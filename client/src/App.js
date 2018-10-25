@@ -6,7 +6,7 @@ import character from "./pages/character";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 
-import Wrapper from "./components/Wrapper";
+//import Wrapper from "./components/Wrapper";
 
 
 import "./App.css";
@@ -17,13 +17,13 @@ const App = () => (
     <div>
       <Navbar />
      
-      <Wrapper>
+     
         <Route exact path="/character" component={character} />
         {/* <Route exact path="/profile" component={Profile} />
         <Route exact path="/about" component={About} />
        */}
         <Route exact path="/" component={Home} />
-      </Wrapper>
+    
    
     </div>
   </Router>
