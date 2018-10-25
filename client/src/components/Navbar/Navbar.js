@@ -36,18 +36,18 @@ const Navbar = props => (
             Character
           </Link>
         </li> 
-        {/* <li className="nav-item">
+        <li className="nav-item">
           <Link
-            to="/profile"
+            to="/battle"
             className={
-              window.location.pathname === "/profile"
+              window.location.pathname === "/battle"
                 ? "nav-link active"
                 : "nav-link"
             }
           >
-            Profile
+            Battle
           </Link>
-        </li> */}
+        </li>
       </ul>
     </div>
   </nav>
