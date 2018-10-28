@@ -18,6 +18,11 @@ const CharacterSchema = new Schema({
     required: true
   },
 
+  currentInitRoll: {
+   type: Number,
+   default: 0 
+  },
+
   image: { 
     type: String, 
     

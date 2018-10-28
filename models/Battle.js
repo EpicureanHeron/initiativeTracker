@@ -17,7 +17,7 @@ const BattleSchema = new Schema({
    //this may not need to be a string 
    playerCharacters : [{ type : Schema.Types.ObjectId, ref: 'Character' }],
 
-
+   
 
 });
 
