@@ -64,3 +64,8 @@ Current Round: Number of cycle
     * instead of the modolo division, could be done by having the 1st and last character in the array have a special ID (that if they die it gets put on the next one of the right or left). 
 
 * Dex thought: could have dex just = initiatve on the character model, then update the inint each battle...then revert back to just the dex mod at the end of the battle. 
+
+10/30/2018
+
+* Need to work on the battle page adding the init and dex
+* 

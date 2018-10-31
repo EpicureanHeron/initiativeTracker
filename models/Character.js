@@ -6,13 +6,13 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 const CharacterSchema = new Schema({
-  // `title` is required and of type String
+
   name: {
     type: String,
     required: true, 
     unique: true,
   },
-  // `link` is required and of type String
+
   dex: {
     type: Number,
     required: true
