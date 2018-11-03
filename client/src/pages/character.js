@@ -20,6 +20,12 @@ class CharPage extends React.Component {
     .then(res => this.setState({ PCarray: res.data }))
   }
 
+  initUpdate()  {
+    prompt("This was clicked")
+  }
+
+
+
   render() {
     return (
     <div>
@@ -27,6 +33,7 @@ class CharPage extends React.Component {
       <Wrapper>
         
         {(this.state.PCarray).map(item => <CharCard
+            initUpdate={this.initUpdate}
             key={item._id}
             dex = {item.dex}
             id={item._id}
