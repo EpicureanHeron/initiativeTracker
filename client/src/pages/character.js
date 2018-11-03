@@ -11,43 +11,44 @@ import API from "../utils/API"
 
 class CharPage extends React.Component {
   state = {
-   PCarray: []
+    PCarray: []
   };
 
   componentDidMount() {
     console.log("mounted!")
     API.getAllCharacter()
-    .then(res => this.setState({ PCarray: res.data }))
+      .then(res => this.setState({ PCarray: res.data }))
   }
 
-  initUpdate(id)   {
-   let init = prompt("Enter init")
-   init = parseInt(init)
-   let update = {
-     currentInitRoll: init
-   }
-  API.updateInit(id, update)
-  .then(res => console.log(res.data))
+  initUpdate(id) {
+    let init = prompt("Enter init")
+    init = parseInt(init)
+    let update = {
+      currentInitRoll: init
+    }
+    API.updateInit(id, update)
+      .then(res => console.log(res.data))
   }
 
 
 
   render() {
     return (
-    <div>
-<CharForm />
-      <Wrapper>
-        
-        {(this.state.PCarray).map(item => <CharCard
+      <div>
+        <CharForm />
+        <Wrapper>
+
+          {(this.state.PCarray).map(item => <CharCard
             initUpdate={this.initUpdate}
+            currentInitRoll = {item.currentInitRoll}
             key={item._id}
-            dex = {item.dex}
+            dex={item.dex}
             id={item._id}
             name={item.name}
-            player = {item.player}
+            player={item.player}
             image={item.image} />)}
-      </Wrapper>
-    </div>
+        </Wrapper>
+      </div>
     )
   }
 
