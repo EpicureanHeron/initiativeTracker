@@ -27,8 +27,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   updateCharacter: function(req, res) {
+    console.log(req.body.currentInitRoll)
     db.Character
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, {$set:{currentInitRoll: req.body.currentInitRoll}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

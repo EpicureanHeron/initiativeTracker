@@ -7,9 +7,9 @@ router.route("/")
   .post(controller.createCharacter);
 
 router.route("/:id")
+  .put(controller.updateCharacter)
   //.get(controller.findByIdRecipe)
 //  .delete(controller.removeRecipe)
 
-//router.put("/:id/:incrementOrDecrement", controller.updateRecipeLikeCount)
 
 module.exports = router;

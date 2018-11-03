@@ -25,6 +25,10 @@ export default {
         return axios.put("/api/recipes/" + id + '/' + incrementOrDecrement);
     },
 
+    updateInit: function(id, update) {
+        return axios.put("/api/character/" + id, update);
+    },
+
     // USERS API CALLS
 
     //Gets all the users data in an array 

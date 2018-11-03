@@ -20,8 +20,14 @@ class CharPage extends React.Component {
     .then(res => this.setState({ PCarray: res.data }))
   }
 
-  initUpdate()  {
-    prompt("This was clicked")
+  initUpdate(id)   {
+   let init = prompt("Enter init")
+   init = parseInt(init)
+   let update = {
+     currentInitRoll: init
+   }
+  API.updateInit(id, update)
+  .then(res => console.log(res.data))
   }
 
 
