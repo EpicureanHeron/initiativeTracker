@@ -8,13 +8,18 @@ import API from "../utils/API"
 
 class CharPage extends React.Component {
   state = {
-   PCarray: []
+    PCarray: []
   };
 
   componentDidMount() {
     console.log("mounted!")
+    this.getCharacters()
+  }
+
+  getCharacters() {
+    console.log("Get Chars triggered")
     API.getAllCharacter()
-    .then(res => this.setState({ PCarray: res.data}))
+      .then(res => this.setState({ PCarray: res.data }))
   }
 
   initUpdate(id) {
@@ -23,40 +28,44 @@ class CharPage extends React.Component {
     let update = {
       currentInitRoll: init
     }
+    //this needs to work better
     API.updateInit(id, update)
       .then(res => console.log(res.data))
+    this.getCharacters()
   }
 
 
 
   initSort(numArray) {
 
-  //  return a.currentInitRoll.localeCompare(b.currentInitRoll);
-   let newArray = numArray.sort((a, b) =>   (b.currentInitRoll + b.dex) - (a.currentInitRoll + a.dex));
-   console.log(newArray)
+    //  return a.currentInitRoll.localeCompare(b.currentInitRoll);
+    let sortedArr = numArray.sort((a, b) => (b.currentInitRoll + b.dex) - (a.currentInitRoll + a.dex));
+    this.setState({ PCarray: sortedArr })
+
   }
 
 
   render() {
     return (
-    <div>
+      <div>
 
-      <Wrapper>
-        <p>This is the battle page</p>
-           {(this.state.PCarray).map(item => <CharCard
+        <Wrapper>
+          <p>This is the battle page</p>
+          {(this.state.PCarray).map(item => <CharCard
             initUpdate={this.initUpdate}
-            currentInitRoll = {item.currentInitRoll}
+            
+            currentInitRoll={item.currentInitRoll}
             key={item._id}
             dex={item.dex}
             id={item._id}
             name={item.name}
             player={item.player}
             image={item.image} />)}
-      </Wrapper>
-      <div>
-      <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
+        </Wrapper>
+        <div>
+          <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
+        </div>
       </div>
-    </div>
     )
   }
 
