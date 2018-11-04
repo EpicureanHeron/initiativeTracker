@@ -32,7 +32,7 @@ class CharPage extends React.Component {
   initSort(numArray) {
 
   //  return a.currentInitRoll.localeCompare(b.currentInitRoll);
-   let newArray = numArray.sort((a, b) => a.currentInitRoll- b.currentInitRoll);
+   let newArray = numArray.sort((a, b) =>   (b.currentInitRoll + b.dex) - (a.currentInitRoll + a.dex));
    console.log(newArray)
   }
 
@@ -53,7 +53,9 @@ class CharPage extends React.Component {
             player={item.player}
             image={item.image} />)}
       </Wrapper>
-      <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Primary</button>
+      <div>
+      <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
+      </div>
     </div>
     )
   }
