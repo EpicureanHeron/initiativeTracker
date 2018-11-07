@@ -8,7 +8,8 @@ import API from "../utils/API"
 
 class CharPage extends React.Component {
   state = {
-    PCarray: []
+    PCarray: [],
+    counter: 0
   };
 
   componentDidMount() {
@@ -44,11 +45,17 @@ class CharPage extends React.Component {
 
   }
 
+  updateTurn() {
+    let increasedCounter = this.state.counter += 1
+    this.setState({counter: increasedCounter})
+    console.log(this.state.counter)
+  }
+
 
   render() {
     return (
       <div>
-
+      <p>{this.state.counter}</p>
         <Wrapper>
           <p>This is the battle page</p>
           {(this.state.PCarray).map(item => <CharCard
@@ -64,6 +71,7 @@ class CharPage extends React.Component {
         </Wrapper>
         <div>
           <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
+          <button type="button" onClick={() =>this.updateTurn()} class="btn btn-primary">Next Turn</button>
         </div>
       </div>
     )
