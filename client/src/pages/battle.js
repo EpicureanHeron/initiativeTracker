@@ -51,6 +51,28 @@ class CharPage extends React.Component {
     console.log(this.state.counter)
   }
 
+  addMonsterToArray() {
+    //basic JSON passed and put into the array is rendered. 
+
+    //Would like to use an outside API to get the image
+
+    //currentInitRoll is the only one that will be fillable by end user, buit dex must be there just so the friendcard and sort works properly
+
+    
+    let newMonster = {
+      name: "Dragon",
+      dex: 0,
+      currentInitRoll:  0,
+      image: "https://www.aidedd.org/dnd/images/dragonBlack.jpg",
+      player: "NPC"
+    }
+    let newArray = this.state.PCarray
+    newArray.push(newMonster)
+    this.setState({PCarray: newArray})
+
+    console.log(this.state.PCarray)
+  }
+
 
   render() {
     return (
@@ -72,6 +94,7 @@ class CharPage extends React.Component {
         <div>
           <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
           <button type="button" onClick={() =>this.updateTurn()} class="btn btn-primary">Next Turn</button>
+          <button type="button" onClick={() =>this.addMonsterToArray()} class="btn btn-primary">Add a Monster</button>
         </div>
       </div>
     )
