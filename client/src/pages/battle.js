@@ -6,7 +6,7 @@ import CharCard from "../components/FriendCard"
 import API from "../utils/API"
 
 
-class CharPage extends React.Component {
+class BattlePage extends React.Component {
   state = {
     PCarray: [],
     counter: 0
@@ -47,7 +47,7 @@ class CharPage extends React.Component {
 
   updateTurn() {
     let increasedCounter = this.state.counter += 1
-    this.setState({counter: increasedCounter})
+    this.setState({ counter: increasedCounter })
     console.log(this.state.counter)
   }
 
@@ -58,17 +58,17 @@ class CharPage extends React.Component {
 
     //currentInitRoll is the only one that will be fillable by end user, buit dex must be there just so the friendcard and sort works properly
 
-    
+
     let newMonster = {
       name: "Dragon",
       dex: 0,
-      currentInitRoll:  0,
+      currentInitRoll: 0,
       image: "https://www.aidedd.org/dnd/images/dragonBlack.jpg",
       player: "NPC"
     }
     let newArray = this.state.PCarray
     newArray.push(newMonster)
-    this.setState({PCarray: newArray})
+    this.setState({ PCarray: newArray })
 
     console.log(this.state.PCarray)
   }
@@ -77,24 +77,30 @@ class CharPage extends React.Component {
   render() {
     return (
       <div>
-      <p>{this.state.counter}</p>
-        <Wrapper>
-          <p>This is the battle page</p>
-          {(this.state.PCarray).map(item => <CharCard
-            initUpdate={this.initUpdate}
-            
-            currentInitRoll={item.currentInitRoll}
-            key={item._id}
-            dex={item.dex}
-            id={item._id}
-            name={item.name}
-            player={item.player}
-            image={item.image} />)}
-        </Wrapper>
+        <p>Round Number: {this.state.counter}</p>
+        <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
+        <button type="button" onClick={() => this.updateTurn()} class="btn btn-primary">Next Turn</button>
+        <button type="button" onClick={() => this.addMonsterToArray()} class="btn btn-primary">Add a Monster</button>
         <div>
-          <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
-          <button type="button" onClick={() =>this.updateTurn()} class="btn btn-primary">Next Turn</button>
-          <button type="button" onClick={() =>this.addMonsterToArray()} class="btn btn-primary">Add a Monster</button>
+          <Wrapper>
+            <p>This is the battle page</p>
+            {(this.state.PCarray).map(item => <CharCard
+              initUpdate={this.initUpdate}
+              giphy
+              currentInitRoll={item.currentInitRoll}
+              key={item._id}
+              dex={item.dex}
+              id={item._id}
+              name={item.name}
+              player={item.player}
+              image={item.image} />)}
+          </Wrapper>
+        </div>
+
+        <div>
+
+
+
         </div>
       </div>
     )
@@ -102,4 +108,4 @@ class CharPage extends React.Component {
 
 }
 
-export default CharPage;
+export default BattlePage;
