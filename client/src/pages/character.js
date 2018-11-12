@@ -36,8 +36,8 @@ class CharPage extends React.Component {
     return (
       <div>
         <CharForm />
-        <Wrapper>
-
+        <Wrapper> 
+          {/* should use a .filter function to map ONLY player characters */}
           {(this.state.PCarray).map(item => <CharCard
             initUpdate={this.initUpdate}
             currentInitRoll = {item.currentInitRoll}
