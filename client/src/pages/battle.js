@@ -86,7 +86,7 @@ class BattlePage extends React.Component {
             <p>This is the battle page</p>
             {(this.state.PCarray).map(item => <CharCard
               initUpdate={this.initUpdate}
-              giphy
+              
               currentInitRoll={item.currentInitRoll}
               key={item._id}
               dex={item.dex}
