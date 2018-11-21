@@ -1,8 +1,4 @@
 import React from "react";
-// import Hero from "../components/Hero";
-// import Container from "../components/Container";
-// import Row from "../components/Row";
-// import Col from "../components/Col";
 import Wrapper from "../components/Wrapper";
 import CharForm from "../components/CharForm";
 import CharCard from "../components/FriendCard"

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Wrapper from "../components/Wrapper";
-
+import Button from "../components/Button"
 import CharCard from "../components/FriendCard"
 import API from "../utils/API"
 
@@ -78,6 +78,8 @@ class BattlePage extends React.Component {
     return (
       <div>
         <p>Round Number: {this.state.counter}</p>
+        <Button function = {this.updateTurn} 
+        name = "Sort"></Button>
         <button type="button" onClick={() => this.initSort(this.state.PCarray)} class="btn btn-primary">Sort!</button>
         <button type="button" onClick={() => this.updateTurn()} class="btn btn-primary">Next Turn</button>
         <button type="button" onClick={() => this.addMonsterToArray()} class="btn btn-primary">Add a Monster</button>
