@@ -102,7 +102,6 @@ class BattlePage extends React.Component {
         <div>
 
 
-
         </div>
       </div>
     )
