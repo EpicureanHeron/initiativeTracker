@@ -54,10 +54,10 @@ class CharForm extends Component {
   <form>
     <div className="form-group">
      
-      <input name ="name" value={this.state.name} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Character Name" />
-      <input name ="dex" value={this.state.dex} onChange={this.handleInputChange} type="dex" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Initiative Bonus" />
-      <input name ="playerImage" value={this.state.playerImage} onChange={this.handleInputChange} type="playerImage" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image URL" />
-      <input name = "player"  value={this.state.player}  onChange={this.handleInputChange} type="player" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Player's name" />
+      <input name ="name" value={this.state.name} onChange={this.handleInputChange} type="name" className="form-control custom-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Character Name" />
+      <input name ="dex" value={this.state.dex} onChange={this.handleInputChange} type="dex" className="form-control custom-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Initiative Bonus" />
+      <input name ="playerImage" value={this.state.playerImage} onChange={this.handleInputChange} type="playerImage" className=" custom-form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image URL" />
+      <input name = "player"  value={this.state.player}  onChange={this.handleInputChange} type="player" className=" custom-form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Player's name" />
 
     </div>
    
