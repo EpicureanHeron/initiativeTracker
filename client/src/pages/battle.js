@@ -97,6 +97,7 @@ class BattlePage extends React.Component {
               id={item._id}
               name={item.name}
               player={item.player}
+              status={item.status}
               image={item.image} />)}
           </Wrapper>
         </div>

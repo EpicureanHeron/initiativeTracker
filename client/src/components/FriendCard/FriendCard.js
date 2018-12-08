@@ -10,7 +10,7 @@ const FriendCard = props => (
     <p>Current Init Roll {props.currentInitRoll}</p>
     <p>Dex: {props.dex}</p>
     <p>Calculate init roll: {props.currentInitRoll + props.dex}</p>
-   
+    <p>Status: {props.status.toString()}</p>
   </div>
 );
 

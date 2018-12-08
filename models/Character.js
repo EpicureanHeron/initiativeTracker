@@ -32,6 +32,12 @@ const CharacterSchema = new Schema({
    player: {
      type: String,
      required: true
+  },
+
+  status: {
+     type: Boolean,
+     required: true,
+     default: true
   }
 
 

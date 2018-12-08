@@ -41,6 +41,7 @@ class CharPage extends React.Component {
             dex={item.dex}
             id={item._id}
             name={item.name}
+            status={item.status}
             player={item.player}
             image={item.image} />)}
         </Wrapper>
