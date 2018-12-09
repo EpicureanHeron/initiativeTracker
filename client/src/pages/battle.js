@@ -16,7 +16,7 @@ class BattlePage extends React.Component {
   componentDidMount() {
   //  console.log("mounted!")
     this.getCharacters()
-    this.lifeFilter()
+    
   }
 
   getCharacters() {
