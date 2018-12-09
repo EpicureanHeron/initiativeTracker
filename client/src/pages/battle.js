@@ -100,9 +100,9 @@ class BattlePage extends React.Component {
     return (
       <div>
         <p>Round Number: {this.state.counter}</p>
-        <Button
+        {/* <Button
          function = {this.updateTurn} 
-        name = "Sort"></Button>
+        name = "Sort"></Button> */}
         {/* custombtn class is in the button component */}
         <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Sort!</button>
         <button type="button" onClick={() => this.updateTurn()} class="btn btn-primary custom-btn">Next Turn</button>
