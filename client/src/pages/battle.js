@@ -60,6 +60,18 @@ class BattlePage extends React.Component {
     console.log(this.state.counter)
   }
 
+  initUpdate(id) {
+    let init = prompt("Enter init")
+    init = parseInt(init)
+    let update = {
+      currentInitRoll: init
+    }
+    API.updateInit(id, update)
+      .then(res => console.log(res.data))
+  }
+
+ 
+
   addMonsterToArray() {
     //basic JSON passed and put into the array is rendered. 
 
