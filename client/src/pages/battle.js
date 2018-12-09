@@ -9,18 +9,21 @@ import API from "../utils/API"
 class BattlePage extends React.Component {
   state = {
     PCarray: [],
-    counter: 0
+    counter: 0,
+    alivePlayers: [],
   };
 
   componentDidMount() {
-    console.log("mounted!")
+  //  console.log("mounted!")
     this.getCharacters()
+    this.lifeFilter()
   }
 
   getCharacters() {
-    console.log("Get Chars triggered")
+   // console.log("Get Chars triggered")
     API.getAllCharacter()
       .then(res => this.setState({ PCarray: res.data }))
+     
   }
 
   initUpdate(id) {
@@ -36,9 +39,9 @@ class BattlePage extends React.Component {
   }
 
   lifeFilter() {
-    console.log(this.state.PCarray)
-    const alivePlayers = this.state.PCarray.filter(player => player.status === true)
-    console.log(alivePlayers)
+   
+    const filteredArray = this.state.PCarray.filter(player => player.status === true)
+    this.setState({ alivePlayers: filteredArray })
 
   }
 
@@ -70,7 +73,8 @@ class BattlePage extends React.Component {
       dex: 0,
       currentInitRoll: 0,
       image: "https://www.aidedd.org/dnd/images/dragonBlack.jpg",
-      player: "NPC"
+      player: "NPC",
+      status: true,
     }
     let newArray = this.state.PCarray
     newArray.push(newMonster)
@@ -95,7 +99,7 @@ class BattlePage extends React.Component {
         <div>
           <Wrapper>
             <p>This is the battle page</p>
-            {(this.state.PCarray).map(item => <CharCard
+            {(this.state.alivePlayers).map(item => <CharCard
               initUpdate={this.initUpdate}
               
               currentInitRoll={item.currentInitRoll}
