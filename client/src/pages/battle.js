@@ -22,7 +22,7 @@ class BattlePage extends React.Component {
   getCharacters() {
    // console.log("Get Chars triggered")
     API.getAllCharacter()
-      .then(res => this.setState({ PCarray: res.data }))
+      .then(res => this.setState({ alivePlayers: res.data.filter(player => player.status === true) }))
      
   }
 
@@ -37,7 +37,7 @@ class BattlePage extends React.Component {
       .then(res => console.log(res.data))
     this.getCharacters()
   }
-
+//incorparted the below in getcharacters function, 
   lifeFilter() {
    
     const filteredArray = this.state.PCarray.filter(player => player.status === true)
