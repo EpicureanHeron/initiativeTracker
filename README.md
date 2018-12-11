@@ -69,3 +69,9 @@ Current Round: Number of cycle
 
 * Need to work on the battle page adding the init and dex
 * 
+
+12/10/2018
+
+* Add a monster needs to be created
+* Figure out what to do with the Battle Table? 
+* Add modal component, should use this to update all PC info
