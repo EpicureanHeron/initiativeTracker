@@ -88,9 +88,10 @@ class BattlePage extends React.Component {
       player: "NPC",
       status: true,
     }
-    let newArray = this.state.PCarray
+
+    let newArray = this.state.alivePlayers
     newArray.push(newMonster)
-    this.setState({ PCarray: newArray })
+    this.setState({ alivePlayers: newArray })
 
     console.log(this.state.PCarray)
   }
