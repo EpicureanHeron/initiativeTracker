@@ -38,6 +38,12 @@ const CharacterSchema = new Schema({
      type: Boolean,
      required: true,
      default: true
+  },
+
+  active: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 
 

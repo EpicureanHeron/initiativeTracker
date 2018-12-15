@@ -51,12 +51,16 @@ class BattlePage extends React.Component {
     //  return a.currentInitRoll.localeCompare(b.currentInitRoll);
     let sortedArr = numArray.sort((a, b) => (b.currentInitRoll + b.dex) - (a.currentInitRoll + a.dex));
     this.setState({ PCarray: sortedArr })
+    // sets the 0th index to be active after sorting
+    this.state.alivePlayers[0].active = true 
 
   }
 
   updateTurn() {
     let increasedCounter = this.state.counter += 1
     this.setState({ counter: increasedCounter })
+    //hopefully changes who is active
+    this.state.alivePlayers[this.state.counter].active = true 
     console.log(this.state.counter)
   }
 
@@ -117,6 +121,7 @@ class BattlePage extends React.Component {
               
               currentInitRoll={item.currentInitRoll}
               key={item._id}
+              
               dex={item.dex}
               id={item._id}
               name={item.name}
