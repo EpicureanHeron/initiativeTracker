@@ -17,6 +17,7 @@
 
 .activePlayer {
   background: gold !important;
+  color: black !important
 }
 
 .card > .img-container {
