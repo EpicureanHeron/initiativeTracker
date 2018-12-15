@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.active {
+  background: gold !important;
+}
+
 .card > .img-container {
   height: 80%;
   overflow: hidden;
