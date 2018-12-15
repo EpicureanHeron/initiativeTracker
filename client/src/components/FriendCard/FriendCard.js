@@ -3,7 +3,7 @@ import "./FriendCard.css";
 
 const FriendCard = props => (
   <div>
-
+    {console.log(props.active)}
     {(props.active === true)
     
       ? 

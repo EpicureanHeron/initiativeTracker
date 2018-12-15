@@ -59,7 +59,7 @@ class BattlePage extends React.Component {
   updateTurn() {
     let newAlivePlayers = this.state.alivePlayers
     newAlivePlayers[this.state.counter].active = false 
-
+    
     let increasedCounter = this.state.counter += 1
     this.setState({ counter: increasedCounter })
     //hopefully changes who is active
@@ -128,7 +128,7 @@ class BattlePage extends React.Component {
               
               currentInitRoll={item.currentInitRoll}
               key={item._id}
-              
+              active={item.active}
               dex={item.dex}
               id={item._id}
               name={item.name}
