@@ -91,6 +91,7 @@ class BattlePage extends React.Component {
       name: "Dragon",
       dex: 0,
       currentInitRoll: 0,
+      active: false,
       image: "https://www.aidedd.org/dnd/images/dragonBlack.jpg",
       player: "NPC",
       status: true,
