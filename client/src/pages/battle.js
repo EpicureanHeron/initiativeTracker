@@ -102,11 +102,13 @@ class BattlePage extends React.Component {
 
     //currentInitRoll is the only one that will be fillable by end user, buit dex must be there just so the friendcard and sort works properly
 
+    var monsterInit = prompt("Enter Init", "0");
 
+    monsterInit = parseInt(monsterInit)
     let newMonster = {
       name: "Dragon",
       dex: 0,
-      currentInitRoll: 0,
+      currentInitRoll: monsterInit,
       active: false,
       image: "https://www.aidedd.org/dnd/images/dragonBlack.jpg",
       player: "NPC",
