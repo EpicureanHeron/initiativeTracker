@@ -75,3 +75,11 @@ Current Round: Number of cycle
 * Add a monster needs to be created
 * Figure out what to do with the Battle Table? 
 * Add modal component, should use this to update all PC info
+
+12/16/2018 
+* /battle
+    * allow for all the players to be selectable and an input for their rolled init
+    * additional field for how many monsters and then dynamically create that many inputs for their rolled init
+    * display all via cards
+
+    * onClick on the battle page should provide the ability to take a character out of the battle (flip their alivestatus/active status)
