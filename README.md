@@ -83,3 +83,4 @@ Current Round: Number of cycle
     * display all via cards
 
     * onClick on the battle page should provide the ability to take a character out of the battle (flip their alivestatus/active status)
+    * THIS COULD BE A POST TO THE BATTLE TABLE TO RECORD THE NAMES AND ENEMIES AND (when they die) who died (and perhaps who killed what)
