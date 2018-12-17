@@ -7,6 +7,7 @@ import API from "../utils/API"
 
 
 class BattlePage extends React.Component {
+
   state = {
     PCarray: [],
     counter: 0,
@@ -137,10 +138,9 @@ class BattlePage extends React.Component {
         <button type="button" onClick={() => this.lifeFilter()} class="btn btn-primary custom-btn">Log Players ALive</button>
         <div>
           <Wrapper>
-            <p>This is the battle page</p>
+            
             {(this.state.alivePlayers).map(item => <CharCard
-              initUpdate={this.initUpdate}
-              
+              initUpdate={this.initUpdate} 
               currentInitRoll={item.currentInitRoll}
               key={item._id}
               active={item.active}

@@ -12,25 +12,25 @@ const FriendCard = props => (
         <div className="img-container">
           <img alt={props.name} src={props.image} />
         </div>
-        <p>{props.name}</p>
-        <p>Current Init Roll {props.currentInitRoll}</p>
+        <p><strong>{props.name}</strong></p>
+        <p>Last Init Roll: {props.currentInitRoll}</p>
         <p>Dex: {props.dex}</p>
-        <p>Calculate init roll: {props.currentInitRoll + props.dex}</p>
-        <p>Status: {props.status.toString()}</p>
-        <p>active boy</p>
+        <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>
+     
+     
       </div>
 
       : 
       
       <div className="card" data-id={props.id} onClick={() => props.initUpdate(props.id)} >
         <div className="img-container">
-          <img alt={props.name} src={props.image} />
+        <img alt={props.name} src={props.image} />
         </div>
-        <p>{props.name}</p>
-        <p>Current Init Roll {props.currentInitRoll}</p>
+        <p><strong>{props.name}</strong></p>
+        <p>Last Init Roll: {props.currentInitRoll}</p>
         <p>Dex: {props.dex}</p>
-        <p>Calculate init roll: {props.currentInitRoll + props.dex}</p>
-        <p>Status: {props.status.toString()}</p>
+        <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>
+        
       </div>
     }
 
