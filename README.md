@@ -84,3 +84,9 @@ Current Round: Number of cycle
 
     * onClick on the battle page should provide the ability to take a character out of the battle (flip their alivestatus/active status)
     * THIS COULD BE A POST TO THE BATTLE TABLE TO RECORD THE NAMES AND ENEMIES AND (when they die) who died (and perhaps who killed what)
+
+12/18/2018
+
+* Clicking on a monster on /battle could create a window which then you can update the "kills" attribute on the player model (would need to create a a kills attribute on the playerr character list OR this might be better handled through another model but that takes a PC as foreign key)
+
+* Long term could have a STATs page which gives everyones times knocked out and kills
