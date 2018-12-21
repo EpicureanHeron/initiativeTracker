@@ -65,27 +65,29 @@ class BattlePage extends React.Component {
 
     newAlivePlayers[this.state.turnCounter].active = false 
     
-    let increasedCounter;
+    let newTurnCounter;
 
     //resets turn to the beginning of the order 
     if(this.state.turnCounter >=  this.state.alivePlayers.length - 1) {
-      let increasedTurn = this.state.turnCounter + 1
-      this.setState({turnCounter : increasedTurn})
-      increasedCounter = 0
-      this.setState({ turnCounter : increasedCounter })
+
+      let newRoundCounter = this.state.roundCounter + 1
+      
+      newTurnCounter = 0
+     
+      this.setState({
+        turnCounter : newTurnCounter,
+        roundCounter: newRoundCounter
+       })
+
     }
     //moves to the next player
     else {
-      increasedCounter = this.state.turnCounter += 1
-      this.setState({ counter: increasedCounter })
+      newTurnCounter = this.state.turnCounter += 1
+      this.setState({ turnCounter: newTurnCounter })
     }
     
-   
-
     
-
-    //hopefully changes who is active
-    newAlivePlayers[increasedCounter].active = true
+    newAlivePlayers[newTurnCounter].active = true
     this.setState({ alivePlayers: newAlivePlayers })
     
   }
