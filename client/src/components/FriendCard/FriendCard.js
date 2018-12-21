@@ -3,7 +3,7 @@ import "./FriendCard.css";
 
 const FriendCard = props => (
   <div>
-    {console.log(props.active)}
+   
     {(props.active === true)
     
       ? 
@@ -16,8 +16,6 @@ const FriendCard = props => (
         <p>Last Init Roll: {props.currentInitRoll}</p>
         <p>Dex: {props.dex}</p>
         <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>
-     
-     
       </div>
 
       : 
@@ -29,11 +27,9 @@ const FriendCard = props => (
         <p><strong>{props.name}</strong></p>
         <p>Last Init Roll: {props.currentInitRoll}</p>
         <p>Dex: {props.dex}</p>
-        <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>
-        
+        <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>       
       </div>
     }
-
 
   </div>
 );
