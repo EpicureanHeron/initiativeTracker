@@ -135,7 +135,7 @@ class BattlePage extends React.Component {
         <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Sort!</button>
         <button type="button" onClick={() => this.updateTurn()} class="btn btn-primary custom-btn">Next Turn</button>
         <button type="button" onClick={() => this.addMonsterToArray()} class="btn btn-primary custom-btn">Add a Monster</button>
-        <button type="button" onClick={() => this.lifeFilter()} class="btn btn-primary custom-btn">Log Players ALive</button>
+
         <div>
           <Wrapper>
             

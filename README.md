@@ -90,3 +90,4 @@ Current Round: Number of cycle
 * Clicking on a monster on /battle could create a window which then you can update the "kills" attribute on the player model (would need to create a a kills attribute on the playerr character list OR this might be better handled through another model but that takes a PC as foreign key)
 
 * Long term could have a STATs page which gives everyones times knocked out and kills
+
