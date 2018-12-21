@@ -10,8 +10,10 @@ class BattlePage extends React.Component {
 
   state = {
     PCarray: [],
-    counter: 0,
+    turnCounter: 0,
+    roundCounter: 0,
     alivePlayers: [],
+
   };
 
   componentDidMount() {
@@ -61,16 +63,20 @@ class BattlePage extends React.Component {
 
     let newAlivePlayers = this.state.alivePlayers
 
-    newAlivePlayers[this.state.counter].active = false 
+    newAlivePlayers[this.state.turnCounter].active = false 
     
     let increasedCounter;
 
-    if(this.state.counter >=  this.state.alivePlayers.length - 1) {
+    //resets turn to the beginning of the order 
+    if(this.state.turnCounter >=  this.state.alivePlayers.length - 1) {
+      let increasedTurn = this.state.turnCounter + 1
+      this.setState({turnCounter : increasedTurn})
       increasedCounter = 0
-      this.setState({ counter: increasedCounter })
+      this.setState({ roundCounter: increasedCounter })
     }
+    //moves to the next player
     else {
-      increasedCounter = this.state.counter += 1
+      increasedCounter = this.state.turnCounter += 1
       this.setState({ counter: increasedCounter })
     }
     
@@ -127,7 +133,8 @@ class BattlePage extends React.Component {
   render() {
     return (
       <div>
-        <p>Round Number: {this.state.counter}</p>
+        <p>Round: {this.state.roundCounter + 1} </p>
+        <p>Turn: {this.state.turnCounter +  1}</p>
         {/* <Button
          function = {this.updateTurn} 
         name = "Sort"></Button> */}
