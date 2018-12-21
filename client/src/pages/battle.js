@@ -72,7 +72,7 @@ class BattlePage extends React.Component {
       let increasedTurn = this.state.turnCounter + 1
       this.setState({turnCounter : increasedTurn})
       increasedCounter = 0
-      this.setState({ roundCounter: increasedCounter })
+      this.setState({ turnCounter : increasedCounter })
     }
     //moves to the next player
     else {
