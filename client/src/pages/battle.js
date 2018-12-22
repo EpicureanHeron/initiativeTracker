@@ -22,6 +22,11 @@ class BattlePage extends React.Component {
     
   }
 
+  // initForm(){
+  //   API.getAllCharacter()
+  //   .then(res => )
+  // }
+
   getCharacters() {
    // console.log("Get Chars triggered")
     API.getAllCharacter()
@@ -135,8 +140,10 @@ class BattlePage extends React.Component {
   render() {
     return (
       <div>
-        <p>Round: {this.state.roundCounter + 1} </p>
-        <p>Turn: {this.state.turnCounter +  1}</p>
+        <h2>Round: {this.state.roundCounter + 1} </h2>
+        <h2>Turn: {this.state.turnCounter +  1}</h2>
+
+        
         {/* <Button
          function = {this.updateTurn} 
         name = "Sort"></Button> */}
