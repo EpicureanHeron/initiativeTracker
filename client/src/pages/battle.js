@@ -182,7 +182,7 @@ class BattlePage extends React.Component {
         </div>
                  {(this.state.alivePlayers).map(item => <InitForm
          name={item.name}
-                    />)}s
+                    />)}
       
         
       
