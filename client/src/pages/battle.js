@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper";
 import Button from "../components/Button"
 import CharCard from "../components/FriendCard"
 import API from "../utils/API"
+import InitForm from "../components/InitForm"
 
 
 class BattlePage extends React.Component {
@@ -133,7 +134,7 @@ class BattlePage extends React.Component {
     newArray.push(newMonster)
     this.setState({ alivePlayers: newArray })
 
-    console.log(this.state.PCarray)
+   
   }
 
 
@@ -142,7 +143,7 @@ class BattlePage extends React.Component {
       <div>
         <h2>Round: {this.state.roundCounter + 1} </h2>
         <h2>Turn: {this.state.turnCounter +  1}</h2>
-
+       
         
         {/* <Button
          function = {this.updateTurn} 
@@ -153,9 +154,16 @@ class BattlePage extends React.Component {
         <button type="button" onClick={() => this.addMonsterToArray()} class="btn btn-primary custom-btn">Add a Monster</button>
 
         <div>
+        
+        </div>
+  
+
+
+        <div>
           <Wrapper>
-            
+          {console.log(this.state.alivePlayers)}
             {(this.state.alivePlayers).map(item => <CharCard
+              
               initUpdate={this.initUpdate} 
               currentInitRoll={item.currentInitRoll}
               key={item._id}
@@ -165,9 +173,19 @@ class BattlePage extends React.Component {
               name={item.name}
               player={item.player}
               status={item.status}
-              image={item.image} />)}
+              image={item.image} />
+              )}
+
+             
+   
           </Wrapper>
         </div>
+                 {(this.state.alivePlayers).map(item => <InitForm
+         name={item.name}
+                    />)}s
+      
+        
+      
 
         <div>
 
