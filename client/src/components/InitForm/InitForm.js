@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import "./InitForm.css";
 import API from "./../../utils/API"
 
+class InitForm extends React.Component { 
 
 
-const InitForm = props => (
+
+
+render = props => {
+  return (
 
       
       <div>
         <p>{props.name}</p>
       {/* <input name ="name" value={this.state.name} onChange={this.handleInputChange} type="name" className="form-control custom-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={props.name}  /> */}
-        <input ></input>
+        <input id={props._id}></input>
       </div>
      
       
@@ -18,6 +22,8 @@ const InitForm = props => (
 
  
     )
+  }
+}
 
 
 

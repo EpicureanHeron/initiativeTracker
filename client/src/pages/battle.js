@@ -180,12 +180,14 @@ class BattlePage extends React.Component {
    
           </Wrapper>
         </div>
+        <Wrapper>
                  {(this.state.alivePlayers).map(item => <InitForm
          name={item.name}
+         id={item._id}
                     />)}
       
         
-      
+      </Wrapper>
 
         <div>
 
