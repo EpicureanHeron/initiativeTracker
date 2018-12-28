@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper";
 import Button from "../components/Button"
 import CharCard from "../components/FriendCard"
 import API from "../utils/API"
+import InitForm from "../components/InitForm"
 
 
 class BattlePage extends React.Component {
@@ -21,6 +22,11 @@ class BattlePage extends React.Component {
     this.getCharacters()
     
   }
+
+  // initForm(){
+  //   API.getAllCharacter()
+  //   .then(res => )
+  // }
 
   getCharacters() {
    // console.log("Get Chars triggered")
@@ -128,15 +134,24 @@ class BattlePage extends React.Component {
     newArray.push(newMonster)
     this.setState({ alivePlayers: newArray })
 
-    console.log(this.state.PCarray)
+   
   }
 
 
   render() {
     return (
       <div>
-        <p>Round: {this.state.roundCounter + 1} </p>
-        <p>Turn: {this.state.turnCounter +  1}</p>
+        <h2>Round: {this.state.roundCounter + 1} </h2>
+        <h2>Turn: {this.state.turnCounter +  1}</h2>
+       <form>
+       {(this.state.alivePlayers).map(item => <InitForm
+         name={item.name}
+         id={item._id}
+                    />)}
+          
+         <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Update Inits</button>
+       </form>
+        
         {/* <Button
          function = {this.updateTurn} 
         name = "Sort"></Button> */}
@@ -146,9 +161,16 @@ class BattlePage extends React.Component {
         <button type="button" onClick={() => this.addMonsterToArray()} class="btn btn-primary custom-btn">Add a Monster</button>
 
         <div>
+        
+        </div>
+      
+
+
+        <div>
           <Wrapper>
-            
+          {console.log(this.state.alivePlayers)}
             {(this.state.alivePlayers).map(item => <CharCard
+              
               initUpdate={this.initUpdate} 
               currentInitRoll={item.currentInitRoll}
               key={item._id}
@@ -158,9 +180,14 @@ class BattlePage extends React.Component {
               name={item.name}
               player={item.player}
               status={item.status}
-              image={item.image} />)}
+              image={item.image} />
+              )}
+
+             
+   
           </Wrapper>
         </div>
+       
 
         <div>
 

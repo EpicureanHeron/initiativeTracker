@@ -28,6 +28,9 @@ export default {
     updateInit: function(id, update) {
         return axios.put("/api/character/" + id, update);
     },
+    //use this for updating multiple records (on the battle page)
+    //https://stackoverflow.com/questions/38742475/what-is-the-right-approach-to-update-many-records-in-mongodb-using-mongoose
+  //  updateInitMulti: function()
 
     // USERS API CALLS
 
