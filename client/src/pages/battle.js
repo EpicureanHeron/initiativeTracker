@@ -148,6 +148,7 @@ class BattlePage extends React.Component {
          name={item.name}
          id={item._id}
                     />)}
+          
          <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Update Inits</button>
        </form>
         
