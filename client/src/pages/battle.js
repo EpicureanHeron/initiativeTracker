@@ -143,7 +143,13 @@ class BattlePage extends React.Component {
       <div>
         <h2>Round: {this.state.roundCounter + 1} </h2>
         <h2>Turn: {this.state.turnCounter +  1}</h2>
-       
+       <form>
+       {(this.state.alivePlayers).map(item => <InitForm
+         name={item.name}
+         id={item._id}
+                    />)}
+         <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Update Inits</button>
+       </form>
         
         {/* <Button
          function = {this.updateTurn} 
@@ -156,7 +162,7 @@ class BattlePage extends React.Component {
         <div>
         
         </div>
-  
+      
 
 
         <div>
@@ -180,14 +186,7 @@ class BattlePage extends React.Component {
    
           </Wrapper>
         </div>
-        <Wrapper>
-                 {(this.state.alivePlayers).map(item => <InitForm
-         name={item.name}
-         id={item._id}
-                    />)}
-      
-        
-      </Wrapper>
+       
 
         <div>
 
