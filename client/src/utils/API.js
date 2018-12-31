@@ -20,10 +20,7 @@ export default {
         return axios.post("/api/character/", characterJSON);
     },
     // Updates recipe based on the MongoDB passed to it 
-    updateRecipe: function (id, plusorminus) {
-        const incrementOrDecrement = plusorminus === 1 ? 'increment' : 'decrement'
-        return axios.put("/api/recipes/" + id + '/' + incrementOrDecrement);
-    },
+ 
 
     updateInit: function(id, update) {
         return axios.put("/api/character/" + id, update);

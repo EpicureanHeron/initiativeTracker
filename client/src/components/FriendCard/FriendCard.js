@@ -27,7 +27,8 @@ const FriendCard = props => (
         <p><strong>{props.name}</strong></p>
         <p>Last Init Roll: {props.currentInitRoll}</p>
         <p>Dex: {props.dex}</p>
-        <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>       
+        <p>Calculated Init Roll: {props.currentInitRoll + props.dex}</p>     
+       
       </div>
     }
 

@@ -28,12 +28,16 @@ module.exports = {
   },
   updateCharacter: function(req, res) {
     console.log(req.body.currentInitRoll)
+   // let options = {returnOriginal:false}
     db.Character
-      .findOneAndUpdate({ _id: req.params.id }, {$set:{currentInitRoll: req.body.currentInitRoll}})
+      // below I have added the options but it is not returning the new model per what I have read on stack overflow 
+      //https://stackoverflow.com/questions/32811510/mongoose-findoneandupdate-doesnt-return-updated-document
+      .findOneAndUpdate({ _id: req.params.id },  {$set:{currentInitRoll: req.body.currentInitRoll}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   removeCharacter: function(req, res) {
+
     db.Character
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())

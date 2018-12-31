@@ -18,9 +18,9 @@ class BattlePage extends React.Component {
   };
 
   componentDidMount() {
-  //  console.log("mounted!")
+    //  console.log("mounted!")
     this.getCharacters()
-    
+
   }
 
   // initForm(){
@@ -29,10 +29,10 @@ class BattlePage extends React.Component {
   // }
 
   getCharacters() {
-   // console.log("Get Chars triggered")
+    // console.log("Get Chars triggered")
     API.getAllCharacter()
       .then(res => this.setState({ alivePlayers: res.data.filter(player => player.status === true) }))
-     
+
   }
 
   initUpdate(id) {
@@ -46,9 +46,9 @@ class BattlePage extends React.Component {
       .then(res => console.log(res.data))
     this.getCharacters()
   }
-//incorparted the below in getcharacters function, 
+  //incorparted the below in getcharacters function, 
   lifeFilter() {
-   
+
     const filteredArray = this.state.PCarray.filter(player => player.status === true)
     this.setState({ alivePlayers: filteredArray })
 
@@ -61,7 +61,7 @@ class BattlePage extends React.Component {
     let sortedArr = numArray.sort((a, b) => (b.currentInitRoll + b.dex) - (a.currentInitRoll + a.dex));
     this.setState({ PCarray: sortedArr })
     // sets the 0th index to be active after sorting
-    this.state.alivePlayers[0].active = true 
+    this.state.alivePlayers[0].active = true
 
   }
 
@@ -69,21 +69,21 @@ class BattlePage extends React.Component {
 
     let newAlivePlayers = this.state.alivePlayers
 
-    newAlivePlayers[this.state.turnCounter].active = false 
-    
+    newAlivePlayers[this.state.turnCounter].active = false
+
     let newTurnCounter;
 
     //resets turn to the beginning of the order 
-    if(this.state.turnCounter >=  this.state.alivePlayers.length - 1) {
+    if (this.state.turnCounter >= this.state.alivePlayers.length - 1) {
 
       let newRoundCounter = this.state.roundCounter + 1
-      
+
       newTurnCounter = 0
-     
+
       this.setState({
-        turnCounter : newTurnCounter,
+        turnCounter: newTurnCounter,
         roundCounter: newRoundCounter
-       })
+      })
 
     }
     //moves to the next player
@@ -91,11 +91,11 @@ class BattlePage extends React.Component {
       newTurnCounter = this.state.turnCounter += 1
       this.setState({ turnCounter: newTurnCounter })
     }
-    
-    
+
+
     newAlivePlayers[newTurnCounter].active = true
     this.setState({ alivePlayers: newAlivePlayers })
-    
+
   }
 
   initUpdate(id) {
@@ -105,10 +105,10 @@ class BattlePage extends React.Component {
       currentInitRoll: init
     }
     API.updateInit(id, update)
-      .then(res => console.log(res.data))
+      .then(res => console.log(res.data) )
   }
 
- 
+
 
   addMonsterToArray() {
     //basic JSON passed and put into the array is rendered. 
@@ -134,7 +134,7 @@ class BattlePage extends React.Component {
     newArray.push(newMonster)
     this.setState({ alivePlayers: newArray })
 
-   
+
   }
 
 
@@ -142,16 +142,27 @@ class BattlePage extends React.Component {
     return (
       <div>
         <h2>Round: {this.state.roundCounter + 1} </h2>
-        <h2>Turn: {this.state.turnCounter +  1}</h2>
-       <form>
-       {(this.state.alivePlayers).map(item => <InitForm
-         name={item.name}
-         id={item._id}
-                    />)}
+        <h2>Turn: {this.state.turnCounter + 1}</h2>
+        {/* <form>
+
           
-         <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Update Inits</button>
-       </form>
-        
+          {this.state.alivePlayers.length > 0 ? (
+            
+            this.state.alivePlayers.map(item => <InitForm
+              name={item.name}
+              id={item._id}
+            />)
+          )
+            :
+
+            (<div>Loading</div>)
+          }
+
+
+
+          <button type="button" onClick={() => this.initSort(this.state.alivePlayers)} class="btn btn-primary custom-btn">Update Inits</button>
+        </form> */}
+
         {/* <Button
          function = {this.updateTurn} 
         name = "Sort"></Button> */}
@@ -161,17 +172,17 @@ class BattlePage extends React.Component {
         <button type="button" onClick={() => this.addMonsterToArray()} class="btn btn-primary custom-btn">Add a Monster</button>
 
         <div>
-        
+
         </div>
-      
+
 
 
         <div>
           <Wrapper>
-          {console.log(this.state.alivePlayers)}
+
             {(this.state.alivePlayers).map(item => <CharCard
-              
-              initUpdate={this.initUpdate} 
+
+              initUpdate={this.initUpdate}
               currentInitRoll={item.currentInitRoll}
               key={item._id}
               active={item.active}
@@ -181,13 +192,13 @@ class BattlePage extends React.Component {
               player={item.player}
               status={item.status}
               image={item.image} />
-              )}
+            )}
 
-             
-   
+
+
           </Wrapper>
         </div>
-       
+
 
         <div>
 
