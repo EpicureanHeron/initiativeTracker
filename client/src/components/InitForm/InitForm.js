@@ -2,33 +2,14 @@ import React, { Component } from "react";
 import "./InitForm.css";
 import API from "./../../utils/API"
 
-class InitForm extends Component {
-
-  state = {
-    name: "",
-    dex: "",
-    playerImage: "",
-    player: ""
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-
-  render = props => {
-    return (
-
+const InitForm  = props => (
 
 
 
 
       <div>
-        {(props.name)
-          ?
+        {console.log(props)}
+        {console.log("THIS IS THE INIT PAGE WAKKA WAKKA")}
           <div>
 
             <p>{props.name}</p>
@@ -38,12 +19,10 @@ class InitForm extends Component {
 
           </div>
 
-          :
-          <div>Loading</div>
-        }
+    
       </div>
     )
-  }
-}
+  
+
 
 export default InitForm;
