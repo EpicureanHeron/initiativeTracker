@@ -44,6 +44,10 @@ const CharacterSchema = new Schema({
     type: Boolean,
     required: true,
     default: false
+  },
+  campaign: {
+    type: String,
+    required: true
   }
 
 
