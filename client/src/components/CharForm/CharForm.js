@@ -10,7 +10,8 @@ class CharForm extends Component {
     name: "",
     dex: "",
     playerImage: "",
-    player: ""
+    player: "",
+    campaign: ""
   };
 
   handleClick = event => {
@@ -25,7 +26,8 @@ class CharForm extends Component {
       name: this.state.name,
       dex: this.state.dex,
       image: this.state.playerImage,
-      player: this.state.player
+      player: this.state.player,
+      campaign: this.state.campaign
     }
     console.log(charInfo)
     API.saveCharacter(charInfo)
@@ -53,12 +55,12 @@ class CharForm extends Component {
 
   <form>
     <div className="form-group">
-     
+      
       <input name ="name" value={this.state.name} onChange={this.handleInputChange} type="name" className="form-control custom-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Character Name" />
       <input name ="dex" value={this.state.dex} onChange={this.handleInputChange} type="dex" className="form-control custom-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Initiative Bonus" />
       <input name ="playerImage" value={this.state.playerImage} onChange={this.handleInputChange} type="playerImage" className=" custom-form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image URL" />
       <input name = "player"  value={this.state.player}  onChange={this.handleInputChange} type="player" className=" custom-form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Player's name" />
-
+      <input name = "campaign"  value={this.state.campaign}  onChange={this.handleInputChange} type="campaign" className=" custom-form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Campaign" />
     </div>
    
     <button type="submit"   onClick={this.handleClick}

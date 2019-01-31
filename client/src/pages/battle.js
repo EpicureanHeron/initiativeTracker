@@ -105,7 +105,7 @@ class BattlePage extends React.Component {
       currentInitRoll: init
     }
     API.updateInit(id, update)
-      .then(res => console.log(res.data) )
+      .then(res => console.log(res.data))
   }
 
 
