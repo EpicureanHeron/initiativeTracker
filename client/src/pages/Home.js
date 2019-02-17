@@ -1,21 +1,29 @@
 import React, { Component } from "react";
+import API from "../utils/API"
 
 class Home extends Component {
 
+  state = {
+    PCarray: [],
+    campaignList: []
+  };
 
-    componentDidMount() {
-        console.log("contact")
-      }
+  componentDidMount() {
+    console.log("mounted!")
+    let currentCampaignList = this.state.campaignList
+    API.getAllCharacter()
+    .then(res => this.setState({ PCarray: res.data }))
+  }
+  render() {
+    return (
+      <div>
+        {(this.state.PCarray).map(item => 
+        <p>{item.campaign}</p>)}
+      </div>
+    );
+  }
 
-      render() {
-        return (
-          <div>
-            <h1 className="text-center">Home page</h1>
-          </div>
-        );
-      }
-
-// This closes out the Component bracket up top
+  // This closes out the Component bracket up top
 }
 
 export default Home
