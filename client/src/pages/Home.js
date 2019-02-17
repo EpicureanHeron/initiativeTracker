@@ -10,15 +10,25 @@ class Home extends Component {
 
   componentDidMount() {
     console.log("mounted!")
-    let currentCampaignList = this.state.campaignList
+
     API.getAllCharacter()
-    .then(res => this.setState({ PCarray: res.data }))
+      .then(res => this.setState({ PCarray: res.data }))
   }
   render() {
     return (
       <div>
-        {(this.state.PCarray).map(item => 
-        <p>{item.campaign}</p>)}
+        {(this.state.PCarray).map(item => {
+          console.log("triggered")
+          
+          if (!this.state.campaignList.includes(item.campaign)) {
+            {console.log(item.campaign)}
+            let newList = this.state.campaignList
+            newList.push(item.campaign)
+            this.setState({ campaignList: newList })
+          }
+        }
+        )
+        }
       </div>
     );
   }
